@@ -1,29 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Picker</title>
+    <title>Custom Movie Picker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>🍿 Movie Selection Roulette 🎬</h1>
-        <p>Click the button to draw a movie from the available options.</p>
+        <p>Enter your movie list below (one title per line) and click "Load List".</p>
 
-        <div class="movie-list-container">
-            <h2>Available Movies (<span id="count-display">9</span>)</h2>
+        <div class="input-area">
+            <textarea id="movie-input" rows="8" placeholder="Enter movie titles here, one per line (e.g.,&#10;Movie Title A&#10;Movie Title B&#10;Movie Title C...)"></textarea>
+            <button id="load-list-button">Load List</button>
+        </div>
+        <hr> <div class="movie-list-container">
+            <h2>Available Movies (<span id="count-display">0</span>)</h2>
             <ul id="movie-list">
                 </ul>
         </div>
 
-        <button id="draw-button">Draw a Movie!</button>
+        <button id="draw-button" disabled>Draw a Movie!</button>
 
         <div id="selection-result" class="result-box hidden">
             <p><strong>Selected Movie:</strong></p>
             <h3 id="selected-title"></h3>
         </div>
 
-        <button id="reset-button" class="hidden">Reset List</button>
+        <button id="reset-button" class="hidden">Reset Draw</button>
     </div>
 
     <script src="script.js"></script>
